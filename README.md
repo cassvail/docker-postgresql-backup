@@ -1,4 +1,4 @@
-# Postgresql backup
+# Docker PostgreSql backup
 
 * Docker container to execute timed backups of a postgresql database
 * Backups are stored in a VOLUME ``/backups``
@@ -19,6 +19,7 @@ postgresql-backup:
   depends_on:
     - postgresql
   environment:
+    POSTGRES_HOST: postgresql
     POSTGRES_DB: dbname
     POSTGRES_USER: admin
     POSTGRES_PASSWORD: admin
