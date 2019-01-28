@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
 CURRENTDIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
-# docker build $CURRENTDIR --rm -t postgresql-backup
-docker build $CURRENTDIR --rm -t cassvail/postgresql-backup:10-alpine
+docker build $CURRENTDIR --rm -t cassvail/postgresql-backup
