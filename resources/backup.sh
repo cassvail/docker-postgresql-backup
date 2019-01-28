@@ -15,6 +15,9 @@ mkdir -p $DIR/
 echo "$BAKNAME Started"
 echo "Backing up $DATABASE"
 export PGPASSWORD=$PASSWORD
-pg_dump -Fp -h "$HOST" -U "$USERNAME" "$DATABASE" -f $DIR/$BAKNAME.in_progress.sql;
-mv $DIR/$BAKNAME.in_progress.sql $DIR//$BAKNAME.sql
+pg_dump -Fp -h "$HOST" -U "$USERNAME" "$DATABASE" -f /$BAKNAME.in_progress.sql
+mv /$BAKNAME.in_progress.sql /$BAKNAME.sql
+zip /$BAKNAME.sql.zip /$BAKNAME.sql
+rm /$BAKNAME.sql
+mv /$BAKNAME.sql.zip /$DIR/$BAKNAME.sql.zip
 echo "$BAKNAME Done"
