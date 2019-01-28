@@ -15,4 +15,8 @@ VOLUME /backups
 
 ADD resources/* /
 
+RUN chmod +x /backup.sh
+RUN chmod +x /delete_old_backup.sh
+RUN chmod +x /entrypoint.sh
+
 ENTRYPOINT /entrypoint.sh
